@@ -1,5 +1,5 @@
 # Ye Olde Snails
-##### A Minecraft mod by Navinate and Glyceron
+##### A Minecraft mod by Navinate, Glyceron, and Jacesilverwave
 > This mod’s goal is to add funky snails and knight themed items to Minecraft
 > It is inspired by the illustrations in snails in illuminated manuscripts from middle ages
 
