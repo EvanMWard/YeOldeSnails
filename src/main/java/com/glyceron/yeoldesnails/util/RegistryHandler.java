@@ -4,6 +4,7 @@ import com.glyceron.yeoldesnails.YeOldeSnails;
 import com.glyceron.yeoldesnails.armor.ModArmorMaterial;
 import com.glyceron.yeoldesnails.blocks.BlockItemBase;
 import com.glyceron.yeoldesnails.blocks.FossilizedShellBlock;
+import com.glyceron.yeoldesnails.items.Escargot;
 import com.glyceron.yeoldesnails.items.ItemBase;
 import com.glyceron.yeoldesnails.tools.ModItemTier;
 import net.minecraft.block.Block;
@@ -29,6 +30,7 @@ public class RegistryHandler {
 
     //Items
     public static final RegistryObject<Item> SNAIL_SHELL = ITEMS.register("snail_shell", ItemBase::new);
+    public static final RegistryObject<Escargot> ESCARGOT = ITEMS.register("escargot", Escargot::new);
 
     //Tools
     public static final RegistryObject<SwordItem> KNIGHTS_LANCE = ITEMS.register("knights_lance", () ->
