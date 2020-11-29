@@ -4,8 +4,10 @@ import com.glyceron.yeoldesnails.YeOldeSnails;
 import com.glyceron.yeoldesnails.blocks.BlockItemBase;
 import com.glyceron.yeoldesnails.blocks.FossilizedShellBlock;
 import com.glyceron.yeoldesnails.items.ItemBase;
+import com.glyceron.yeoldesnails.tools.ModItemTier;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,6 +25,11 @@ public class RegistryHandler {
 
     //Items
     public static final RegistryObject<Item> SNAIL_SHELL = ITEMS.register("snail_shell", ItemBase::new);
+
+    //Tools
+    public static final RegistryObject<SwordItem> KNIGHTS_LANCE = ITEMS.register("knights_lance", ()
+            -> new SwordItem(ModItemTier.SNAIL_SHELL, 2, -2.4F, new Item.Properties().group(YeOldeSnails.TAB))
+    );
 
     //Blocks
     public static final RegistryObject<Block> FOSSILIZED_SHELL_BLOCK = BLOCKS.register("fossilized_shell_block", FossilizedShellBlock::new);
