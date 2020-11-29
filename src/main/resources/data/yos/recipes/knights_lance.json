@@ -2,17 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "pattern":
   [
-    "  i",
-    " s ",
-    "s  "
+    "  s",
+    " w ",
+    "w  "
   ],
   "key":
   {
     "i":
     {
-      "tag": "forge:ingots/iron"
+      "tag": "yos:snail_shell"
     },
-    "s":
+    "w":
     {
       "tag": "forge:rods/wooden"
     }
