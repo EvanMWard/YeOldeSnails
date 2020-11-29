@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "yos:fossilized_shell_block"
+    }
+  ],
+  "result":
+  {
+    "item": "yos:snail_shell",
+    "count": 4
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "   ",
+    "n n",
+    "c c"
+  ],
+  "key":
+  {
+    "c":
+    {
+      "item": "minecraft:chain"
+    },
+    "n":
+    {
+      "tag": "forge:nuggets/iron"
+    }
+  },
+  "result":
+  {
+    "item": "minecraft:chainmail_boots",
+    "count": 1
+  }
+}
