@@ -53,7 +53,7 @@ public enum ModArmorMaterial implements IArmorMaterial {
 
     @Override
     public SoundEvent getSoundEvent() {
-        return this.getSoundEvent();
+        return this.soundEvent;
     }
 
     @Override
