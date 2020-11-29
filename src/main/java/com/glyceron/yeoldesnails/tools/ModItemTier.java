@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 
 public enum ModItemTier implements IItemTier {
 
-    SNAIL_SHELL(3, 800, 7.0F, 3.0F, 12, () -> {
+    KNIGHT(3, 800, 7.0F, 3.0F, 12, () -> {
         return Ingredient.fromItems(RegistryHandler.KNIGHTS_LANCE.get());
     });
 

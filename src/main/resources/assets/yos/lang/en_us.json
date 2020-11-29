@@ -2,5 +2,11 @@
   "item.yos.snail_shell": "Snail Shell",
   "block.yos.fossilized_shell_block": "Fossilized Shell Block",
   "itemGroup.snailsTab": "Ye Olde Snails",
-  "item.yos.knights_lance": "Knight's Lance"
+  "item.yos.knights_lance": "Knight's Lance",
+  "item.yos.knights_battleaxe": "Knight's Battleaxe",
+  "item.yos.knights_mace": "Knight's Mace",
+  "item.yos.snail_mail_helmet": "Snail Mail Helmet",
+  "item.yos.snail_mail_chestplate": "Snail Mail Chestplate",
+  "item.yos.snail_mail_leggings": "Snail Mail Leggings",
+  "item.yos.snail_mail_boots": "Snail Mail Boots"
 }
