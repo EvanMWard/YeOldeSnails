@@ -1,10 +1,15 @@
 package com.glyceron.yeoldesnails;
 
-import com.glyceron.yeoldesnails.util.RegistryHandler;
+import com.glyceron.yeoldesnails.entities.SnailEntity;
+import com.glyceron.yeoldesnails.init.ModBlocks;
+import com.glyceron.yeoldesnails.init.ModEntityTypes;
+import com.glyceron.yeoldesnails.init.ModItems;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -27,15 +32,16 @@ public class YeOldeSnails
 
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-        RegistryHandler.init();
+        ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+        DeferredWorkQueue.runLater(() -> {
+            GlobalEntityTypeAttributes.put(ModEntityTypes.SNAIL.get(), SnailEntity.setCustomAttributes().create());
+        });
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
@@ -46,7 +52,7 @@ public class YeOldeSnails
     public static final ItemGroup TAB = new ItemGroup("snailsTab") {
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(RegistryHandler.SNAIL_SHELL.get());
+            return new ItemStack(ModItems.SNAIL_SHELL.get());
         }
     };
 }

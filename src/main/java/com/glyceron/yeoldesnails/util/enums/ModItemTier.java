@@ -1,6 +1,6 @@
-package com.glyceron.yeoldesnails.tools;
+package com.glyceron.yeoldesnails.util.enums;
 
-import com.glyceron.yeoldesnails.util.RegistryHandler;
+import com.glyceron.yeoldesnails.init.ModItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.crafting.Ingredient;
 
@@ -9,7 +9,7 @@ import java.util.function.Supplier;
 public enum ModItemTier implements IItemTier {
 
     KNIGHT(3, 800, 7.0F, 3.0F, 12, () -> {
-        return Ingredient.fromItems(RegistryHandler.KNIGHTS_LANCE.get());
+        return Ingredient.fromItems(ModItems.KNIGHTS_LANCE.get());
     });
 
     private final int harvestLevel;

@@ -1,7 +1,7 @@
 package com.glyceron.yeoldesnails.events;
 
 import com.glyceron.yeoldesnails.YeOldeSnails;
-import com.glyceron.yeoldesnails.util.RegistryHandler;
+import com.glyceron.yeoldesnails.init.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.horse.HorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,7 +21,7 @@ public class ModClientEvents {
         if(target instanceof PlayerEntity){
             Entity horse = target.getRidingEntity();
             if(horse instanceof HorseEntity){
-                if(player.getHeldItemMainhand().getItem() == RegistryHandler.KNIGHTS_LANCE.get())
+                if(player.getHeldItemMainhand().getItem() == ModItems.KNIGHTS_LANCE.get())
                     target.dismount();
             }
         }
