@@ -4,7 +4,6 @@ import com.glyceron.yeoldesnails.entities.SnailEntity;
 import com.glyceron.yeoldesnails.init.ModBlocks;
 import com.glyceron.yeoldesnails.init.ModEntityTypes;
 import com.glyceron.yeoldesnails.init.ModItems;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -34,6 +33,7 @@ public class YeOldeSnails
 
         ModBlocks.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
         ModItems.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+        ModEntityTypes.ENTITY_TYPES.register(FMLJavaModLoadingContext.get().getModEventBus());
 
         MinecraftForge.EVENT_BUS.register(this);
     }
