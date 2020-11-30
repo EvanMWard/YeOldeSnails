@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 @Mod.EventBusSubscriber(modid = YeOldeSnails.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ModClientEvents {
 
+    //Jousting event
     @SubscribeEvent
     public static void onLanceHitWhileMounted(AttackEntityEvent event){
         PlayerEntity player = event.getPlayer();
