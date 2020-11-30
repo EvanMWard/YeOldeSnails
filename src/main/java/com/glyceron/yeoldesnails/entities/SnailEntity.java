@@ -3,17 +3,23 @@ package com.glyceron.yeoldesnails.entities;
 import net.minecraft.entity.AgeableEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
+import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.LookAtGoal;
 import net.minecraft.entity.ai.goal.LookRandomlyGoal;
 import net.minecraft.entity.ai.goal.PanicGoal;
+import net.minecraft.entity.ai.goal.WaterAvoidingRandomWalkingGoal;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
+import java.util.Random;
 
 public class SnailEntity extends AnimalEntity {
 
@@ -34,6 +40,7 @@ public class SnailEntity extends AnimalEntity {
         this.goalSelector.addGoal(0, new PanicGoal(this, .5D));
         this.goalSelector.addGoal(1, new LookAtGoal(this, PlayerEntity.class, 6.0F));
         this.goalSelector.addGoal(2, new LookRandomlyGoal(this));
+        this.goalSelector.addGoal(3, new WaterAvoidingRandomWalkingGoal(this, 0.1F));
     }
 
     @Nullable
@@ -41,4 +48,5 @@ public class SnailEntity extends AnimalEntity {
     public AgeableEntity func_241840_a(ServerWorld p_241840_1_, AgeableEntity p_241840_2_) {
         return null;
     }
+
 }

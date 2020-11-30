@@ -26,4 +26,10 @@ public class ModClientEvents {
             }
         }
     }
+
+    //Snail in a bucket
+    @SubscribeEvent
+    public static void rightClickSnailWithBucket( event){
+
+    }
 }
