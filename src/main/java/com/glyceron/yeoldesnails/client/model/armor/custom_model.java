@@ -2,6 +2,7 @@ package com.glyceron.yeoldesnails.client.model.armor;// Made with Blockbench 3.7
 // Exported for Minecraft version 1.15
 // Paste this class into your mod and generate all required imports
 
+// THIS IS A TEST MODEL
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
