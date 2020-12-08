@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "yos:snail_bucket"
+  },
+  "result": "yos:escargot_bucket",
+  "experience": 0.35,
+  "cookingtime": 200
+}

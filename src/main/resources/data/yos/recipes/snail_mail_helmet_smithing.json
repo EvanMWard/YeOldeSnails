@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:chainmail_helmet"
+  },
+  "addition": {
+    "item": "yos:snail_shell"
+  },
+  "result": {
+    "item": "yos:snail_mail_helmet"
+  }
+}
