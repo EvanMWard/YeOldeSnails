@@ -2,12 +2,11 @@ package com.glyceron.yeoldesnails.init;
 
 import com.glyceron.yeoldesnails.YeOldeSnails;
 import com.glyceron.yeoldesnails.blocks.BlockItemBase;
-import com.glyceron.yeoldesnails.items.Escargot;
+import com.glyceron.yeoldesnails.items.EscargotBucket;
 import com.glyceron.yeoldesnails.items.ItemBase;
 import com.glyceron.yeoldesnails.items.SnailBucket;
 import com.glyceron.yeoldesnails.util.enums.ModArmorMaterial;
 import com.glyceron.yeoldesnails.util.enums.ModItemTier;
-import net.minecraft.block.Block;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
@@ -22,8 +21,8 @@ public class ModItems {
 
     //Items
     public static final RegistryObject<Item> SNAIL_SHELL = ITEMS.register("snail_shell", ItemBase::new);
-    public static final RegistryObject<Escargot> ESCARGOT = ITEMS.register("escargot", Escargot::new);
-    public static final RegistryObject<SnailBucket> SNAIL_BUCKET = ITEMS.register("snail_in_a_bucket", SnailBucket::new);
+    public static final RegistryObject<EscargotBucket> ESCARGOT_BUCKET = ITEMS.register("escargot_bucket", EscargotBucket::new);
+    public static final RegistryObject<SnailBucket> SNAIL_BUCKET = ITEMS.register("snail_bucket", SnailBucket::new);
 
     //Tools
     public static final RegistryObject<SwordItem> KNIGHTS_LANCE = ITEMS.register("knights_lance",

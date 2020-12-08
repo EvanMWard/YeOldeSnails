@@ -9,6 +9,7 @@
   "item.yos.snail_mail_chestplate": "Snail Mail Chestplate",
   "item.yos.snail_mail_leggings": "Snail Mail Leggings",
   "item.yos.snail_mail_boots": "Snail Mail Boots",
-  "item.yos.escargot": "Escargot in a Bucket",
+  "item.yos.escargot_bucket": "Bucket of Escargot",
+  "item.yos.snail_bucket": "Bucket of Snail",
   "entity.yos.snail": "Snail"
 }

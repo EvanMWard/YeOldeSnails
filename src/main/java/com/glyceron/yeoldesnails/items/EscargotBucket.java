@@ -13,9 +13,9 @@ import net.minecraft.world.World;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 
-public class Escargot extends Item {
+public class EscargotBucket extends Item {
 
-    public Escargot(){
+    public EscargotBucket(){
         super(new Item.Properties()
               .group(YeOldeSnails.TAB)
               .food((new Food.Builder())
