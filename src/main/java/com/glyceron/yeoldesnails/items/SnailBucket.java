@@ -30,11 +30,11 @@ import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 
-public class SnailBucket extends BucketItem{
+public class SnailBucket extends Item{
 
 
-    public SnailBucket(Fluid fluid, Item.Properties builder) {
-        super(fluid, builder);
+    public SnailBucket(Properties properties) {
+        super(new Item.Properties().group(YeOldeSnails.TAB));
     }
 
     @Override
@@ -60,25 +60,6 @@ public class SnailBucket extends BucketItem{
         }
         return ActionResultType.SUCCESS;
     }
-
-
-    /*
-    @Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
-        ItemStack stack = playerIn.getHeldItem(playerIn.getActiveHand());
-
-        RayTraceResult raytraceresult = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.NONE);
-        BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)raytraceresult;
-        BlockPos blockpos = blockraytraceresult.getPos();
-        Direction direction = blockraytraceresult.getFace();
-        BlockPos blockpos1 = blockpos.offset(direction);
-        this.placeSnail();
-        return ActionResult<ItemStack>
-    }
-    */
-
-
-
 }
 
 

@@ -59,6 +59,8 @@ public class SnailEntity extends AnimalEntity {
         return null;
     }
 
+
+    // Method copied and modified from Alexthe666's AlexMobs mod
     public ActionResultType func_230254_b_(PlayerEntity p_230254_1_, Hand p_230254_2_) {
         ItemStack itemstack = p_230254_1_.getHeldItem(p_230254_2_);
         if (itemstack.getItem() == Items.BUCKET && this.isAlive()) {
@@ -75,7 +77,6 @@ public class SnailEntity extends AnimalEntity {
             } else if (!p_230254_1_.inventory.addItemStackToInventory(snailBucket)) {
                 p_230254_1_.dropItem(snailBucket, false);
             }
-
             this.remove();
             return ActionResultType.func_233537_a_(this.world.isRemote);
         } else {

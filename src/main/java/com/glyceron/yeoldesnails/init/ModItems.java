@@ -23,9 +23,8 @@ public class ModItems {
     //Items
     public static final RegistryObject<Item>           SNAIL_SHELL     = ITEMS.register("snail_shell",     ItemBase::new);
     public static final RegistryObject<EscargotBucket> ESCARGOT_BUCKET = ITEMS.register("escargot_bucket", EscargotBucket::new);
-    //public static final RegistryObject<SnailBucket>    SNAIL_BUCKET    = ITEMS.register("snail_bucket",    SnailBucket::new);
-    public static final RegistryObject<SnailBucket> SNAIL_BUCKET =  ITEMS.register("snail_bucket",
-            () -> new SnailBucket(Fluids.EMPTY, new Item.Properties().group(YeOldeSnails.TAB))
+    public static final RegistryObject<SnailBucket>    SNAIL_BUCKET    = ITEMS.register("snail_bucket",
+            () -> new SnailBucket(new Item.Properties().group(YeOldeSnails.TAB))
     );
 
     //Tools
