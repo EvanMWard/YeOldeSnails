@@ -3,32 +3,98 @@ package com.glyceron.yeoldesnails.items;
 import com.glyceron.yeoldesnails.YeOldeSnails;
 import com.glyceron.yeoldesnails.entities.SnailEntity;
 import com.glyceron.yeoldesnails.init.ModEntityTypes;
+import com.glyceron.yeoldesnails.init.ModItems;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
+import net.minecraft.entity.passive.fish.AbstractFishEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.item.BucketItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.item.*;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.RayTraceContext;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
+import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 
-public class SnailBucket extends Item{
+public class SnailBucket extends BucketItem{
 
-    public SnailBucket() {
-        super(new Item.Properties()
-        .group(YeOldeSnails.TAB)
-        .maxStackSize(1));
+
+    public SnailBucket(Fluid fluid, Item.Properties builder) {
+        super(fluid, builder);
     }
 
-    public void onLiquidPlaced(World worldIn, ItemStack stack, BlockPos pos){
-        if(worldIn instanceof ServerWorld){
-            Entity entity = ModEntityTypes.SNAIL.get().spawn((ServerWorld) worldIn, stack, (PlayerEntity) null, pos, SpawnReason.BUCKET, true, false);
+    @Override
+    public ActionResultType onItemUse(ItemUseContext context) {
+
+        World worldIn =  context.getWorld();
+        PlayerEntity playerIn = context.getPlayer();
+        ItemStack itemstack = context.getItem();
+
+        // gets BlockPos and face to spawn in the snail
+        RayTraceResult raytraceresult = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.ANY);
+        BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)raytraceresult;
+        BlockPos blockpos = blockraytraceresult.getPos();
+        Direction direction = blockraytraceresult.getFace();
+        BlockPos pos = blockpos.offset(direction);
+
+        if(worldIn instanceof ServerWorld) {
+            Entity entity = ModEntityTypes.SNAIL.get().spawn((ServerWorld) worldIn, itemstack, (PlayerEntity) null, pos, SpawnReason.BUCKET, true, false);
+            if(!playerIn.isCreative()) {
+                itemstack.shrink(1);
+                playerIn.addItemStackToInventory(new ItemStack(Items.BUCKET));
+            }
         }
+        return ActionResultType.SUCCESS;
     }
+
+
+    /*
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
+        ItemStack stack = playerIn.getHeldItem(playerIn.getActiveHand());
+
+        RayTraceResult raytraceresult = rayTrace(worldIn, playerIn, RayTraceContext.FluidMode.NONE);
+        BlockRayTraceResult blockraytraceresult = (BlockRayTraceResult)raytraceresult;
+        BlockPos blockpos = blockraytraceresult.getPos();
+        Direction direction = blockraytraceresult.getFace();
+        BlockPos blockpos1 = blockpos.offset(direction);
+        this.placeSnail();
+        return ActionResult<ItemStack>
+    }
+    */
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

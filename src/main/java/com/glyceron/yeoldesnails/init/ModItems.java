@@ -7,19 +7,26 @@ import com.glyceron.yeoldesnails.items.ItemBase;
 import com.glyceron.yeoldesnails.items.SnailBucket;
 import com.glyceron.yeoldesnails.util.enums.ModArmorMaterial;
 import com.glyceron.yeoldesnails.util.enums.ModItemTier;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import java.util.function.Supplier;
+
 public class ModItems {
     public static DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, YeOldeSnails.MOD_ID);
 
     //Items
-    public static final RegistryObject<Item> SNAIL_SHELL = ITEMS.register("snail_shell", ItemBase::new);
+    public static final RegistryObject<Item>           SNAIL_SHELL     = ITEMS.register("snail_shell",     ItemBase::new);
     public static final RegistryObject<EscargotBucket> ESCARGOT_BUCKET = ITEMS.register("escargot_bucket", EscargotBucket::new);
-    public static final RegistryObject<SnailBucket> SNAIL_BUCKET = ITEMS.register("snail_bucket", SnailBucket::new);
+    //public static final RegistryObject<SnailBucket>    SNAIL_BUCKET    = ITEMS.register("snail_bucket",    SnailBucket::new);
+    public static final RegistryObject<SnailBucket> SNAIL_BUCKET =  ITEMS.register("snail_bucket",
+            () -> new SnailBucket(Fluids.EMPTY, new Item.Properties().group(YeOldeSnails.TAB))
+    );
 
     //Tools
     public static final RegistryObject<SwordItem> KNIGHTS_LANCE = ITEMS.register("knights_lance",

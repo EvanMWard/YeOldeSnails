@@ -35,7 +35,7 @@ public class ModClientEvents {
     }
 
     //Snail in a bucket events
-    @SubscribeEvent
+    /*@SubscribeEvent
     public static void rightClickSnailWithBucket(PlayerInteractEvent.EntityInteract event){
         PlayerEntity player = event.getPlayer();
         Entity target = event.getTarget();
@@ -45,7 +45,7 @@ public class ModClientEvents {
                 player.addItemStackToInventory(new ItemStack(ModItems.SNAIL_BUCKET.get()));
             }
         }
-    }
+    }*/
 
     /*@SubscribeEvent
     public static void rightClickBlockWithSnailBucket(PlayerInteractEvent.RightClickBlock event){
