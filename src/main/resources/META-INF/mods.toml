@@ -22,10 +22,10 @@ logoFile="examplemod.png" #optional
 
 credits="poggers" #optional
 
-authors="Glyceron, Navinate" #optional
+authors="Glyceron, Navinate, and Jacesilverwave" #optional
 
 description='''
-snail time
+A mod that adds snail and medieval themed items based on illustrations from illuminated manuscripts
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.examplemod]] #optional

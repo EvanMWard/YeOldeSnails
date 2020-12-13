@@ -34,7 +34,11 @@ public class SnailBucket extends Item{
 
 
     public SnailBucket(Properties properties) {
-        super(new Item.Properties().group(YeOldeSnails.TAB));
+        super(new Item.Properties()
+                .group(YeOldeSnails.TAB)
+                .containerItem(Items.BUCKET)
+                .maxStackSize(1)
+        );
     }
 
     @Override
@@ -53,10 +57,8 @@ public class SnailBucket extends Item{
 
         if(worldIn instanceof ServerWorld) {
             Entity entity = ModEntityTypes.SNAIL.get().spawn((ServerWorld) worldIn, itemstack, (PlayerEntity) null, pos, SpawnReason.BUCKET, true, false);
-            if(!playerIn.isCreative()) {
-                itemstack.shrink(1);
-                playerIn.addItemStackToInventory(new ItemStack(Items.BUCKET));
-            }
+            itemstack.shrink(1);
+            playerIn.addItemStackToInventory(new ItemStack(Items.BUCKET));
         }
         return ActionResultType.SUCCESS;
     }
