@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 public enum ModArmorMaterial implements IArmorMaterial {
 
     SNAIL_MAIL(YeOldeSnails.MOD_ID + ":snail_mail", 25, new int[] { 2, 5, 6, 2 }, 18,
-            SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 0.0F, () -> { return Ingredient.fromItems(ModItems.SNAIL_SHELL.get()); }, 1);
+            SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0F, () -> { return Ingredient.fromItems(ModItems.SNAIL_SHELL.get()); }, 1);
 
     private static final int[] MAX_DAMAGE_ARRAY = new int[] {11, 16, 15, 13};
     private final String name;
